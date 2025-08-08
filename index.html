@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oxford Junior English Translator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #004aad;
+      font-weight: bold;
+    }
+
+    .translator-box {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+
+    .translator-box textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    .translator-box button {
+      background-color: #004aad;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .translator-box button:hover {
+      background-color: #003380;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e6f0ff;
+      border-left: 5px solid #004aad;
+      border-radius: 8px;
+      min-height: 40px;
+      font-size: 16px;
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Oxford Junior English Translator</header>
+
+  <div class="container">
+    <h2>📚 English Grammar Chapters</h2>
+
+    <!-- CHAPTER CARDS -->
+
+    <h1>CONTENTS</h1>
+    <p>Chapter Heading</p>
+
+
+    <div class="card"><a href="chater1.html">1. Use of Am, and Are...</a></div>
+    <div class="card"><a href="#">2. Use of  Was, and Were...</a></div>
+    <div class="card"> <a href="#">3. Use of Shall be' and Will be'...</a></div>
+     <div class="card"><a href="#">4.Use of A an and The...</a></div>
+    <div class="card"><a href="#">5. Use of This, That,These and those...</a></div>
+    <div class="card"><a href="#">6. Use of Possessiv Adjectives...</a></div>
+     <div class="card"> <a href="#">7. Use of Possessiv Pronouns...</a></div>
+    <div class="card"><a href="#">8. Use of The 's/' of...</a></div>
+    <div class="card"><a href="#">9.Use of Verb 'to Have...</a></div>
+     <div class="card"><a href="#">10. Use of Infinitive with Verb 'to Have...</a></div>
+    <div class="card"><a href="#">11. Use of Infinitive with Verb 'to be'...</a></div>
+    <div class="card"><a href="#">12. Some More Hints on Interrogative Sentences...</a></div>
+     <div class="card"><a href="#">13. Use of The Tense...</a></div>
+    <div class="card"><a href="#">14. Imperative Sentences...</a></div>
+    <div class="card"><a href="#">15. Use of Introductory 'There'...</a></div>
+     <div class="card"><a href="#">16. Introductory 'It'...</a></div>
+    <div class="card"><a href="#">17. Use of Can, May, Should and Must...</a></div>
+    <div class="card"><a href="#">18. Infinitive, Gerund, Phrase and Clause...</a></div>
+     <div class="card"><a href="#">19. Voice...</a></div>
+    <div class="card"><a href="#">20. Direct and Indirect speech/Narration...</a></div>
+    <div class="card"><a href="#">21. Exercises for Revision...</a></div>
+     <div class="card"><a href="#">22. Conversations...</a></div>
+    <div class="card"><a href="#">23. Verb Forms...</a></div>
+    
+
+
+
+
+    <div class="links-only">
+    <h1>CONTENTS</h1>
+    <p>Chapter Heading</p>
+  
+ 
+  
+
+    <!-- Add more chapters here -->
+
+    <!-- TRANSLATOR -->
+    <div class="translator-box">
+      <h3>🔤 English to Hindi Translator</h3>
+      <label for="inputText">Enter sentence:</label>
+      <textarea id="inputText" placeholder="e.g. She is dancing."></textarea>
+      <button onclick="translate()">Translate</button>
+      <div id="output"></div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Oxford Junior English. All rights reserved.
+  </footer>
+
+  <script>
+    function translate() {
+      const input = document.getElementById("inputText").value.trim().toLowerCase();
+
+      const translations = {
+        "the boy is running": "लड़का दौड़ रहा है",
+        "i am eating food": "मैं खाना खा रहा हूँ",
+        "she is dancing": "वह नाच रही है",
+        "the dog is barking": "कुत्ता भौंक रहा है",
+        "he is sleeping": "वह सो रहा है",
+        "they are playing": "वे खेल रहे हैं"
+      };
+
+      const output = translations[input] || "❗ Translation not found. Try a simple sentence.";
+      document.getElementById("output").innerText = output;
+    }
+  </script>
+
+</body>
+</html>
